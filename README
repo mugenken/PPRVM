@@ -1,0 +1,25 @@
+PPRVM
+
+A Perl powered Ruby version manager.
+Provides a subset of the bash rvm and aims to be less verbose and more
+script friendly.
+
+Work in progress and somewhat early state of development and documentation.
+
+INSTALLATION
+
+To install this module, run the following commands:
+
+	perl Makefile.PL
+	make
+	make test
+	make install
+
+Then in with your users shell:
+rvm.pl --bootstrap
+
+To install latest ruby in database:
+rvm.pl
+
+Usage:
+rvm.pl [--help] [--db <database_file>] [--ruby <valid_version>] [--rubygems <valid_version>]
