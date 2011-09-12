@@ -29,7 +29,7 @@ ruby-1.8.7-p302:
   url: ftp://ftp.ruby-lang.org/pub/ruby/1.8/ruby-1.8.7-p302.tar.gz
 ruby-1.9.2-p0:
   archtype: tgz
-  dir: ruby-1.9.2-0
+  dir: ruby-1.9.2-p0
   file: ruby-1.9.2-p0.tar.gz
   url: ftp://ftp.ruby-lang.org/pub/ruby/1.9/ruby-1.9.2-p0.tar.gz
 ruby-1.9.2-p180:
@@ -78,7 +78,7 @@ my $hash = {
     'ruby-1.9.2-p0' => {
         'file' => 'ruby-1.9.2-p0.tar.gz',
         'url'  => 'ftp://ftp.ruby-lang.org/pub/ruby/1.9/ruby-1.9.2-p0.tar.gz',
-        'dir'  => 'ruby-1.9.2-0',
+        'dir'  => 'ruby-1.9.2-p0',
         'archtype' => 'tgz'
     },
     'latest_rubygems' => {
