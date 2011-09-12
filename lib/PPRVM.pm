@@ -11,6 +11,7 @@ class PPRVM {
     has path_to => ( is => 'rw', isa => 'HashRef' );
 
     our $VERSION = '0.02.15';
+    my $sl = File::Util->SL;
 
     method BUILD {
         $self->path_to($self->config->path_map);
@@ -23,7 +24,7 @@ class PPRVM {
         if ( not -d $self->path_to->{'root'} ){
             mkdir $self->path_to->{'root'};
             while ( my ($k, $v) = each %{ $self->config->{'dirs'} }){
-                mkdir $self->path_to->{'root'} . File::Util->SL . $v;
+                mkdir $self->path_to->{'root'} . $sl . $v;
             }
 
             open my $fh, '>', $self->path_to->{'db_file'};
@@ -181,14 +182,14 @@ class PPRVM {
     method _copy_bin {
         system "cp "
             . $self->path_to->{'ruby_src'}
-            . File::Util->SL
+            . $sl
             . 'bin'
-            . File::Util->SL
+            . $sl
             . '* '
             . $self->path_to->{'ruby_dest'}
-            . File::Util->SL
+            . $sl
             . 'bin'
-            . File::Util->SL;
+            . $sl;
     }
 }
 

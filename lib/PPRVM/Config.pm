@@ -27,6 +27,8 @@ class PPRVM::Config {
     has path_map => ( is => 'rw', isa => 'HashRef' );
     has bootstrap_only => ( is => 'rw', isa => 'Bool', default => 0 );
 
+    my $sl = File::Util->SL;
+
     method BUILD {
         $self->_make_base_config;
         $self->_make_db unless $self->download_db;
@@ -69,19 +71,19 @@ class PPRVM::Config {
             $file = $self->db_file;
         }
         elsif ( -f $ENV{'HOME'}
-                . File::Util->SL
+                . $sl
                 . $self->rootdir
-                . File::Util->SL
+                . $sl
                 . $self->dirs->{'var'}
-                . File::Util->SL
+                . $sl
                 . 'db.yml'
         ){
             $file = $ENV{'HOME'}
-                . File::Util->SL
+                . $sl
                 . $self->rootdir
-                . File::Util->SL
+                . $sl
                 . $self->dirs->{'var'}
-                . File::Util->SL
+                . $sl
                 . 'db.yml';
         }
         else {
@@ -119,105 +121,105 @@ class PPRVM::Config {
         my $pathmap = {
             'root' =>
                 $ENV{'HOME'}
-                . File::Util->SL
+                . $sl
                 . $self->rootdir,
             'real_version' =>
                 $self->download_db->{$self->ruby_version}->{'dir'},
             'installed_db' =>
                 $ENV{'HOME'}
-                . File::Util->SL
+                . $sl
                 . $self->rootdir
-                . File::Util->SL
+                . $sl
                 . $self->dirs->{'var'}
-                . File::Util->SL
+                . $sl
                 . $self->installed_db,
             'db_file' =>
                 $ENV{'HOME'}
-                . File::Util->SL
+                . $sl
                 . $self->rootdir
-                . File::Util->SL
+                . $sl
                 . $self->dirs->{'var'}
-                . File::Util->SL
+                . $sl
                 . 'db.yml',
             'pprvmrc' =>
                 $ENV{'HOME'}
-                . File::Util->SL
+                . $sl
                 . $self->rootdir
-                . File::Util->SL
+                . $sl
                 . $self->dirs->{'var'}
-                . File::Util->SL
+                . $sl
                 . $self->pprvmrc,
             'ruby_dest' =>
                 $ENV{'HOME'}
-                . File::Util->SL
+                . $sl
                 . $self->rootdir
-                . File::Util->SL
+                . $sl
                 . $self->dirs->{'rubies'}
-                . File::Util->SL
+                . $sl
                 . $self->download_db->{$self->ruby_version}->{'dir'},
             'ruby_src' =>
                 $ENV{'HOME'}
-                . File::Util->SL
+                . $sl
                 . $self->rootdir
-                . File::Util->SL
+                . $sl
                 . $self->dirs->{'source'}
-                . File::Util->SL
+                . $sl
                 . $self->download_db->{$self->ruby_version}->{'dir'},
             'ruby_url' =>
                 $self->download_db->{$self->ruby_version}->{'url'},
             'ruby_archive' =>
                 $ENV{'HOME'}
-                . File::Util->SL
+                . $sl
                 . $self->rootdir
-                . File::Util->SL
+                . $sl
                 . $self->dirs->{'source'}
-                . File::Util->SL
+                . $sl
                 . $self->download_db->{$self->ruby_version}->{'file'},
             'gem_dir' =>
                 $ENV{'HOME'}
-                . File::Util->SL
+                . $sl
                 . $self->rootdir
-                . File::Util->SL
+                . $sl
                 . $self->dirs->{'gemsets'}
-                . File::Util->SL
+                . $sl
                 . $self->download_db->{$self->ruby_version}->{'dir'},
             'path' =>
                 $ENV{'HOME'}
-                . File::Util->SL
+                . $sl
                 . $self->rootdir
-                . File::Util->SL
+                . $sl
                 . $self->dirs->{'rubies'}
-                . File::Util->SL
+                . $sl
                 . $self->download_db->{$self->ruby_version}->{'dir'}
-                . File::Util->SL
+                . $sl
                 . 'bin'
                 . ':'
                 . $ENV{'HOME'}
-                . File::Util->SL
+                . $sl
                 . $self->rootdir
-                . File::Util->SL
+                . $sl
                 . $self->dirs->{'gemsets'}
-                . File::Util->SL
+                . $sl
                 . $self->download_db->{$self->ruby_version}->{'dir'}
-                . File::Util->SL
+                . $sl
                 . 'bin'
                 . ':'
                 . '$PATH',
             'rubygems_src' =>
                 $ENV{'HOME'}
-                . File::Util->SL
+                . $sl
                 . $self->rootdir
-                . File::Util->SL
+                . $sl
                 . $self->dirs->{'source'}
-                . File::Util->SL
+                . $sl
                 . $self->download_db->{$self->rubygems_version}->{'dir'},
             'rubygems_archive' =>
                 $ENV{'HOME'}
-                . File::Util->SL
+                . $sl
                 . $self->rootdir
-                . File::Util->SL
+                . $sl
                 . $self->dirs->{'source'}
-                . File::Util->SL
+                . $sl
                 . $self->download_db->{$self->rubygems_version}->{'file'},
             'rubygems_url' =>
                 $self->download_db->{$self->rubygems_version}->{'url'},
@@ -226,7 +228,7 @@ class PPRVM::Config {
 
         while ( my ($k,$v) = each %{ $self->dirs }){
             $pathmap->{$k} = $pathmap->{'root'}
-                . File::Util->SL
+                . $sl
                 . $v;
         }
 
