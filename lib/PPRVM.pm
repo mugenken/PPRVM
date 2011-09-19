@@ -199,7 +199,7 @@ PPRVM - The great new Perl Powered RVM!
 
 =head1 VERSION
 
-Version 0.01
+Version 0.02.15
 
 =head1 SYNOPSIS
 
@@ -250,55 +250,33 @@ Will return 1 if the given ruby version is installed and 0 if it is not.
 
 =head1 AUTHOR
 
-Mugen Kenichi, C<< <mugen at braincore.org> >>
+Mugen Kenichi, C<< <mugen.kenichi at uninets.eu> >>
 
 =head1 BUGS
 
-Please report any bugs or feature requests to C<bug-pprvm at rt.cpan.org>, or through
-the web interface at L<http://rt.cpan.org/NoAuth/ReportBug.html?Queue=PPRVM>.  I will be notified, and then you'll
-automatically be notified of progress on your bug as I make changes.
+Report bugs at:
 
-=head1 SUPPORT
+=over 2
 
-You can find documentation for this module with the perldoc command.
+=item * PPRVM issue tracker
 
-    perldoc PPRVM
+L<https://github.com/mugenken/PPRVM/issues>
 
+=item * support at uninets.eu
 
-You can also look for information at:
-
-=over 4
-
-=item * RT: CPAN's request tracker
-
-L<http://rt.cpan.org/NoAuth/Bugs.html?Dist=PPRVM>
-
-=item * AnnoCPAN: Annotated CPAN documentation
-
-L<http://annocpan.org/dist/PPRVM>
-
-=item * CPAN Ratings
-
-L<http://cpanratings.perl.org/d/PPRVM>
-
-=item * Search CPAN
-
-L<http://search.cpan.org/dist/PPRVM/>
+C<< <mugen.kenichi at uninets.eu> >>
 
 =back
 
+=head1 SUPPORT
 
-=head1 ACKNOWLEDGEMENTS
+=over 2
 
+=item * Technical support
 
-=head1 LICENSE AND COPYRIGHT
+C<< <mugen.kenichi at uninets.eu> >>
 
-Copyright 2011 Mugen Kenichi.
-
-This program is free software; you can redistribute it and/or modify it
-under the terms of either: the GNU General Public License as published
-by the Free Software Foundation; or the Artistic License.
-
-See http://dev.perl.org/licenses/ for more information.
+=back
 
 =cut
+

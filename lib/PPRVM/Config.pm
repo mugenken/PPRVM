@@ -280,3 +280,153 @@ rubygems-1.6.2:
   dir: rubygems-1.6.2
   file: rubygems-1.6.2.tgz
   url: http://rubyforge.org/frs/download.php/74445/rubygems-1.6.2.tgz
+
+__END__
+=head1 NAME
+
+PPRVM::Config - Config module used by PPRVM
+
+=head1 VERSION
+
+Version 0.01
+
+=head1 SYNOPSIS
+
+PPRVM::Config is used to structure the PPRVM config and build sane defaults.
+
+    my $config = PPRVM::Config->new(
+        rootdir => '.pprvm',
+    )
+
+=head1 SUBROUTINES/METHODS
+
+=head2 rootdir
+
+The root of the whole PPRVM directory structure. Defaults to $ENV{HOME}
+
+=head2 ruby_version
+
+The exact ruby version (e.g. ruby-1.9.2-p180).
+Defaults to 'latest'.
+
+=head2 rubygems_version
+
+The exact rubygems version.
+Defaults to 'latest'.
+
+=head2 pprvmrc
+
+The file containing the shell paths and environment variables.
+Defaults to '~/.pprvm/var/pprvmrc' if root_dir and dirs are default.
+
+This file should be sourced in the users .bashrc.
+
+=head2 dirs
+
+A hashref defining the directories under root_dir.
+Defaults to:
+
+    {
+        bin => 'bin',
+        source => 'source',
+        var => 'var',
+        gemsets => 'gemsets',
+        rubies => 'rubies',
+
+    }
+
+=head2 installed_db
+
+A simple textfile with a list of installed ruby versions.
+
+=head2 download_db
+
+A hashref containing information on download urls and archive
+type of the ruby and rubygems versions.
+Example:
+
+    ---
+    latest_ruby:
+      archtype: tgz
+      dir: ruby-1.9.2-p180
+      file: ruby-1.9.2-p180.tar.gz
+      url: ftp://ftp.ruby-lang.org/pub/ruby/1.9/ruby-1.9.2-p180.tar.gz
+    latest_rubygems:
+      archtype: tgz
+      dir: rubygems-1.6.2
+      file: rubygems-1.6.2.tgz
+      url: http://rubyforge.org/frs/download.php/74445/rubygems-1.6.2.tgz
+
+=head2 db_file
+
+The yml file the download_db is generated from.
+
+=head2 path_map
+
+A hashref containing shortcuts to most config options and paths.
+The path are build from config and are absolute.
+
+Those options are:
+
+Root dir
+    $config->root
+
+Ruby version after resolution of 'latest'
+    $config->real_version
+
+File with installed versions
+    $config->installed_db
+
+File with available versions
+    $config->db_file
+
+Environment variables and PATH
+    $config->pprvmrc
+
+Path to binaries
+    $config->path
+
+    $config->ruby_dest
+    $config->ruby_src
+    $config->ruby_url
+    $config->ruby_archive
+    $config->gem_dir
+    $config->rubygems_src
+    $config->rubygems_archive
+    $config->rubygems_url
+
+=head2 bootstrap_only
+
+
+=head1 AUTHOR
+
+Mugen Kenichi, C<< <mugen.kenichi at uninets.eu> >>
+
+=head1 BUGS
+
+Report bugs at:
+
+=over 2
+
+=item * Unicorn::Manager issue tracker
+
+L<https://github.com/mugenken/Unicorn/issues>
+
+=item * support at uninets.eu
+
+C<< <mugen.kenichi at uninets.eu> >>
+
+=back
+
+=head1 SUPPORT
+
+=over 2
+
+=item * Technical support
+
+C<< <mugen.kenichi at uninets.eu> >>
+
+=back
+
+=cut
+
