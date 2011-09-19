@@ -1,0 +1,52 @@
+{
+   "no_index" : {
+      "directory" : [
+         "t",
+         "inc"
+      ]
+   },
+   "meta-spec" : {
+      "version" : "2",
+      "url" : "http://search.cpan.org/perldoc?CPAN::Meta::Spec"
+   },
+   "generated_by" : "ExtUtils::MakeMaker version 6.59, CPAN::Meta::Converter version 2.112150",
+   "version" : "v0.02.15",
+   "name" : "PPRVM",
+   "dynamic_config" : 0,
+   "author" : [
+      "Mugen Kenichi <mugen@braincore.org>"
+   ],
+   "license" : [
+      "MIT"
+   ],
+   "prereqs" : {
+      "runtime" : {
+         "requires" : {
+            "Test::More" : 0,
+            "YAML" : 0,
+            "MooseX::Declare" : "0.34",
+            "Sub::Exporter::ForMethods" : 0,
+            "File::Util" : 0,
+            "Data::Section" : 0,
+            "JSON" : 0
+         }
+      },
+      "configure" : {
+         "requires" : {
+            "ExtUtils::MakeMaker" : 0
+         }
+      },
+      "build" : {
+         "requires" : {
+            "ExtUtils::MakeMaker" : 0
+         }
+      }
+   },
+   "provides" : {
+      "PPRVM::Config" : "lib/PPRVM/Config.pm",
+      "PPRVM::Types" : "lib/PPRVM/Types.pm",
+      "PPRVM" : "lib/PPRVM.pm"
+   },
+   "abstract" : "The great new Perl Powered RVM!",
+   "release_status" : "unstable"
+}

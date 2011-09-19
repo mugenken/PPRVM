@@ -1,0 +1,34 @@
+---
+abstract: The great new Perl Powered RVM!
+author:
+  - 'Mugen Kenichi <mugen@braincore.org>'
+build_requires:
+  ExtUtils::MakeMaker: 0
+configure_requires:
+  ExtUtils::MakeMaker: 0
+dynamic_config: 0
+generated_by: 'ExtUtils::MakeMaker version 6.59, CPAN::Meta::Converter version 2.112150'
+license:
+  - MIT
+meta-spec:
+  url: http://module-build.sourceforge.net/META-spec-v1.4.html
+  version: 1.4
+name: PPRVM
+no_index:
+  directory:
+    - t
+    - inc
+provides:
+  PPRVM: lib/PPRVM.pm
+  PPRVM::Config: lib/PPRVM/Config.pm
+  PPRVM::Types: lib/PPRVM/Types.pm
+release_status: unstable
+requires:
+  Data::Section: 0
+  File::Util: 0
+  JSON: 0
+  MooseX::Declare: 0.34
+  Sub::Exporter::ForMethods: 0
+  Test::More: 0
+  YAML: 0
+version: v0.02.15

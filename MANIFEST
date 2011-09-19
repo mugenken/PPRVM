@@ -1,6 +1,8 @@
 Changes
 MANIFEST
 Makefile.PL
+META.yml
+META.json
 README
 lib/PPRVM.pm
 lib/PPRVM/Types.pm
